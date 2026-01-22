@@ -1,14 +1,15 @@
+const { Localization } = require("@dchighs/dc-localization")
 const express = require('express');
 const app = express();
 const fs = require('fs');
 const { unzipFile } = require('./util/unzipFile');
 
 const log = require('./data/log.json');
-const localization = require('./data/localization.json');
 
 app.use(express.json({ limit: '40mb' }));
 app.use('/', express.static('./frontend'));
 app.use(express.static('public'));
+const port = 7272
 
 app.post('/datauri', (req, res) => {
 	let toSend = {};
@@ -168,21 +169,10 @@ app.post('/extractfile', (req, res) => {
 	res.status(200).send({ message: 'Extracting/Converting files and loading player, please wait...' });
 });
 
-app.get('/listzips', (req, res) => {
+app.get('/listzips', async (req, res) => {
 	let zips = fs.readdirSync('public/files/list-zips');
 	let displayNames = [];
-
-	localization.push(
-		{
-			"tid_unit_2821_name": "Flaming Rock Dragon"
-		},
-		{
-			"tid_unit_3139_name": "Deus Pet Dragon"
-		},
-		{
-			"tid_unit_3140_name": "Sea Dragon"
-		}
-	);
+	const localization = await Localization.create("en");
 
 	zips.forEach(zip => {
 		try{
@@ -207,13 +197,14 @@ app.get('/listzips', (req, res) => {
 				)
 			}
 			else if(zip.includes('_dragon')){
-				let ID = zip.split('basic_')[1].split('_dragon')[0];
-				let dragonName = localization.find(entry => Object.keys(entry)[0] == `tid_unit_${ID}_name`);
+				let ID = Number(zip.split('basic_')[1].split('_dragon')[0]);
+				let dragonName = localization.getDragonName(ID)
 				let form = zip.includes('_3_HD') ? '(Adult form)' : 
 				zip.includes('_2_HD') ? '(Young form)' : '(Baby form)';
 
 				if(zip.includes('skin')){
-					let dragonSkinName = localization.find(entry => Object.keys(entry)[0] == `tid_unit_${ID}_${zip.split('_')[4]}_name`)
+					const skinNameKey = `tid_unit_${ID}_${zip.split('_')[4]}_name`
+					let dragonSkinName = localization.getValueFromKey(skinNameKey)
 
 					displayNames.push(
 						{
@@ -233,8 +224,8 @@ app.get('/listzips', (req, res) => {
 			}
 			else if(zip.includes('fatality')){
 				// basic_fx_3110_fatality_effect_HD_spine-3-8-59_dxt5.zip
-				let ID = zip.split('_fx_')[1].split('_fatality')[0];
-				let dragonName = localization.find(entry => Object.keys(entry)[0] == `tid_unit_${ID}_name`);
+				let ID = Number(zip.split('_fx_')[1].split('_fatality')[0]);
+				let dragonName = localization.getDragonName(ID);
 
 				displayNames.push(
 					{
@@ -263,8 +254,8 @@ const getDataURI = (path) => {
 	return thing;
 }
 
-app.listen(7272, () => {
-    console.log('Server started');
+app.listen(port, () => {
+    console.log(`Server started on http://localhost:${port}`);
 });
 
 module.exports = app;

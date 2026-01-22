@@ -108,7 +108,12 @@
         </footer>
     </body>
     <script>
-        alert('If you\'re on mobile, please rotate your device to landscape mode for a proper experience');
+        const alertMessageShown = sessionStorage.getItem('alertMessageShown');
+
+        if (!alertMessageShown) {
+            alert('If you\'re on mobile, please rotate your device to landscape mode for a proper experience');
+            sessionStorage.setItem('alertMessageShown', 'true');
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" type="text/javascript"></script>
     <script src="./recordcanvas.js" type="text/javascript"></script>

@@ -195,8 +195,8 @@ const setupButtons = (sPlayer, isEternalFatalitySkill) => {
             setLabel();
             
             if(animScale){
-                sPlayer.skeleton.bones[0].scaleX = isEternalFatalitySkill ? animScale : animScale / 10;
-                sPlayer.skeleton.bones[0].scaleY = isEternalFatalitySkill ? animScale : animScale / 10;
+                sPlayer.skeleton.scaleX = isEternalFatalitySkill ? animScale : animScale;
+                sPlayer.skeleton.scaleY = isEternalFatalitySkill ? animScale : animScale;
             }
         }
         else{
@@ -205,8 +205,8 @@ const setupButtons = (sPlayer, isEternalFatalitySkill) => {
             setLabel();
 
             if(animScale){
-                sPlayer.skeleton.bones[0].scaleX = isEternalFatalitySkill ? animScale : animScale / 10;
-                sPlayer.skeleton.bones[0].scaleY = isEternalFatalitySkill ? animScale : animScale / 10;
+                sPlayer.skeleton.scaleX = isEternalFatalitySkill ? animScale : animScale;
+                sPlayer.skeleton.scaleY = isEternalFatalitySkill ? animScale : animScale;
             }
         }
     });
@@ -220,8 +220,8 @@ const setupButtons = (sPlayer, isEternalFatalitySkill) => {
             bone.scaleX = animScale;
             bone.scaleY = animScale;
         });*/
-        sPlayer.skeleton.bones[0].scaleX = isEternalFatalitySkill ? animScale : animScale / 10;
-        sPlayer.skeleton.bones[0].scaleY = isEternalFatalitySkill ? animScale : animScale / 10;
+        sPlayer.skeleton.scaleX = isEternalFatalitySkill ? animScale : animScale;
+        sPlayer.skeleton.scaleY = isEternalFatalitySkill ? animScale : animScale;
     });
 
     secondsToRecordInput.addEventListener('change', (e) => {

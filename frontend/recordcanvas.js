@@ -24,4 +24,4 @@ const record = (canvas, timeInMS) => {
             res(url);
         }
     })
-};
+};          

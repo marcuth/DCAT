@@ -1,18 +1,37 @@
 {
-  "name": "dcanimsv2",
-  "version": "1.0.0",
+  "name": "dcat",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "npx nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "dragon city",
+    "animation tool",
+    "dcat"
+  ],
+  "authors": [
+    {
+      "name": "Felipe Martínez"
+    },
+    {
+      "name": "Marcuth",
+      "email": "me@marcuth.dev"
+    }
+  ],
   "license": "ISC",
   "dependencies": {
-    "adm-zip": "^0.5.10",
-    "axios": "^1.3.4",
-    "express": "^4.18.2",
-    "node-fetch": "^3.3.0"
+    "@dchighs/dc-core": "^0.3.0",
+    "@dchighs/dc-localization": "^0.0.6",
+    "@marcuth/dds-to-png": "^0.0.2",
+    "adm-zip": "^0.5.16",
+    "axios": "^1.13.2",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
