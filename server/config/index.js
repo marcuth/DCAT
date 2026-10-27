@@ -2,7 +2,7 @@ module.exports = {
 	port: 7272,
 	frontendDir: './frontend',
 	publicDir: 'public',
-	logFilePath: 'data/log.json',
+	logsDir: 'logs',
 	filesDir: 'public/files',
 	temporaryDirs: ['zip', 'extracted', 'backgrounds'],
 	cleanupIntervalMs: 480000,

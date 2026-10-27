@@ -1,6 +1,7 @@
 const AdmZip = require('adm-zip');
 const fs = require('fs');
 const path = require('path');
+const logger = require('./logger');
 const { isPngReady } = require('../services/png-service');
 const { convertDdsToPng } = require('@marcuth/dds-to-png');
 
@@ -24,7 +25,7 @@ const unzipFile = (filename) => {
         const pngFileName = `${filename.replace('.zip', '.png')}`;
         const pngFilePath = path.resolve('public/files/extracted', filename, pngFileName);
 
-        console.log('converting dds to png for ' + filename)
+        logger.info('Converting DDS to PNG', { filename });
         convertDdsToPng(ddsFilePath, pngFilePath).then(() => {
             fs.unlinkSync(ddsFilePath);
         });

@@ -31,7 +31,8 @@
     "adm-zip": "^0.5.16",
     "axios": "^1.13.2",
     "express": "^5.2.1",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "winston": "^3.19.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"

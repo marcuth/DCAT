@@ -1,11 +1,10 @@
 const fs = require('fs');
-const { filesDir, logFilePath } = require('../config');
+const { filesDir } = require('../config');
+const logger = require('../utils/logger');
 const { getExtractedFilePath, isPngReady } = require('../services/png-service');
 const { getDisplayNames } = require('../services/dragon-display-name-service');
 const { getBase64FromFile } = require('../utils/data-uri');
 const { removeQuotes } = require('../utils/sanitize-name');
-
-const log = require('../../data/log.json');
 
 const getAnimationDataUri = (req, res) => {
 	const name = removeQuotes(req.body.name);
@@ -18,8 +17,7 @@ const getAnimationDataUri = (req, res) => {
 	const atlasBase64 = getBase64FromFile(getExtractedFilePath(name, 'atlas'));
 	const pngBase64 = getBase64FromFile(getExtractedFilePath(name, 'png'));
 
-	log.push(name);
-	fs.writeFileSync(logFilePath, JSON.stringify(log, null, 3));
+	logger.info('Animation requested', { name });
 
 	res.status(200).send({
 		pngExists: true,
