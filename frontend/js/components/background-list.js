@@ -8,9 +8,9 @@ const defaultBackgroundItems = document.querySelectorAll('.Background-image__lis
 defaultBackgroundItems.forEach(item => {
     item.addEventListener('click', () => {
         const image = item.querySelector('img');
-        const filename = image.src.split('df-bgs/')[1];
+        const filename = image.src.split('default-backgrounds/')[1];
 
-        api.copyToPublic(`public/files/df-bgs/${filename}`, filename, 'backgrounds').then(() => {
+        api.copyToPublic(`public/files/default-backgrounds/${filename}`, filename, 'backgrounds').then(() => {
             appState.backgroundImageName = filename;
             closeBackgroundListButton.click();
         });
