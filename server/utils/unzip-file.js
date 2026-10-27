@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('./logger');
 const { isPngReady } = require('../services/png-service');
-const { convertDdsToPng } = require('@marcuth/dds-to-png');
+const { convertDdsToPng } = require('../services/dds-converter-service');
 
 const unzipFile = (filename) => {
 	if(!filename.endsWith('.zip')){
@@ -28,6 +28,8 @@ const unzipFile = (filename) => {
         logger.info('Converting DDS to PNG', { filename });
         convertDdsToPng(ddsFilePath, pngFilePath).then(() => {
             fs.unlinkSync(ddsFilePath);
+        }).catch(error => {
+            logger.error('Failed to convert DDS to PNG', { filename, error: error.message });
         });
     }
     catch{}

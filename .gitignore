@@ -5,3 +5,4 @@ node_modules
 *.atlas
 *.skel
 logs/
+.env

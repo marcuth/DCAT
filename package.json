@@ -30,6 +30,7 @@
     "@marcuth/dds-to-png": "^0.1.0",
     "adm-zip": "^0.5.16",
     "axios": "^1.13.2",
+    "dotenv": "^18.0.9",
     "express": "^5.2.1",
     "node-fetch": "^3.3.2",
     "winston": "^3.19.0"
