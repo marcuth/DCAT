@@ -5,7 +5,7 @@ const getBase64FromFile = (path) => {
 };
 
 const getBase64FromDataUri = (dataUri) => {
-	return JSON.stringify(dataUri).split(';base64,')[1];
+	return String(dataUri).split(';base64,')[1];
 };
 
 module.exports = { getBase64FromFile, getBase64FromDataUri };

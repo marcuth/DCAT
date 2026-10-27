@@ -56,4 +56,4 @@ const getDisplayNames = async (zips) => {
 	return displayNames;
 };
 
-module.exports = { getDisplayNames };
+module.exports = { getDisplayName, getDisplayNames };
