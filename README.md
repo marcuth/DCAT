@@ -17,9 +17,9 @@ If you have git installed, you can open the command prompt and type in `git clon
 
 If you dont have git, you have to click the button that says `<> Code` right in top of the projects files, and then click the one that says "Download ZIP", a zip file with the project will be downloaded, once it finished you have to extract the file, by right clicking it and selecting "Extract here", the files will be extracted to a folder called "dcanims-main".
 
-![Downloading the file through github](https://github.com/Feli-Martinez/DCAT/blob/main/images/download-github.gif?raw=true)
+![Downloading the file through github](https://github.com/marcuth/DCAT/blob/main/docs/images/download-github.gif?raw=true)
 
-![Extracting the zip file](https://github.com/Feli-Martinez/DCAT/blob/main/images/extract.gif?raw=true)
+![Extracting the zip file](https://github.com/marcuth/DCAT/blob/main/docs/images/extract.gif?raw=true)
 
 ### Running it
 
@@ -27,10 +27,10 @@ Now, to start the tool, you'll need to have [Node.js](https://nodejs.org/en) ins
 
 Once you have it installed, go to the "dcat-main" or "dcat" folder, click the path at the top and type cmd, a window will pop up, now, type `npm install` and press enter. This command is used to install the necessary dependencies for the project to work.
 
-![Installing the dependencies](https://github.com/Feli-Martinez/DCAT/blob/main/images/dependencies.gif?raw=true)
+![Installing the dependencies](https://github.com/marcuth/DCAT/blob/main/docs/images/dependencies.gif?raw=true)
 
 After that, the last thing you'll need to do is type `npm run start` and press enter. And that's it, go to your browser of choice (i recommend chrome, you might notice some lag spikes in other browsers) and open `localhost:7272`. Enjoy :)
 
-![Actually starting the app](https://github.com/Feli-Martinez/DCAT/blob/main/images/start.gif?raw=true)
+![Actually starting the app](https://github.com/marcuth/DCAT/blob/main/docs/images/start.gif?raw=true)
 
-![Opening it in your browser](https://github.com/Feli-Martinez/DCAT/blob/main/images/open.gif?raw=true)
+![Opening it in your browser](https://github.com/marcuth/DCAT/blob/main/docs/images/open.gif?raw=true)
