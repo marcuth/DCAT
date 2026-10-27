@@ -52,7 +52,7 @@ imageInput.addEventListener('change', (e) => {
 
         bgIMGNAME = 'BG-' + imageInput.files[0].name;
 
-        axios.post("/bg",
+        axios.post("/upload-background",
             {
                 "filename": bgIMGNAME,
                 "data": data

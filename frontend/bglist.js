@@ -13,7 +13,7 @@ backgrounds.forEach(bg => {
 
         console.log(bgImg);
 
-        axios.post('/copytopublic', { path: `public/files/df-bgs/${bgImg.src.split('df-bgs/')[1]}`, filename: bgImg.src.split('df-bgs/')[1], type: 'backgrounds' }).then(rsp => {
+        axios.post('/copy-to-public', { path: `public/files/df-bgs/${bgImg.src.split('df-bgs/')[1]}`, filename: bgImg.src.split('df-bgs/')[1], type: 'backgrounds' }).then(rsp => {
             console.log(rsp.data);
             bgIMGNAME = bgImg.src.split('df-bgs/')[1];
             closeBgBtn.click();

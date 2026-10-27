@@ -14,7 +14,7 @@ closeBtn.addEventListener('click', (e) => {
 
 helpBtn.addEventListener('click', (e) => {
     if(zipsList.length == 0){
-        axios.get('/listzips').then(res => {
+        axios.get('/list-zips').then(res => {
             zipsList = res.data.displayNames;
 
             HomeHelpContainer.classList.remove('Home__help_container_hidden');

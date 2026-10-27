@@ -18,11 +18,11 @@ const pushIntoList = () => {
                 link.innerHTML = dragon.displayName;
 
                 link.addEventListener('click', (e) => {
-                    axios.post('/copytopublic', { path: `public/files/list-zips/${dragon.zip}`, filename: dragon.zip, type: 'zip' }).then(res => {
+                    axios.post('/copy-to-public', { path: `public/files/list-zips/${dragon.zip}`, filename: dragon.zip, type: 'zip' }).then(res => {
                         // console.log(res.newPath);
                         closeBtn.click();
 
-                        axios.post("/extractfile",
+                        axios.post("/extract-file",
                         {
                             "filename": dragon.zip
                         }
@@ -60,11 +60,11 @@ const pushIntoList = () => {
                 link.innerHTML = dragon.displayName;
 
                 link.addEventListener('click', (e) => {
-                    axios.post('/copytopublic', { path: `public/files/list-zips/${dragon.zip}`, filename: dragon.zip, type: 'zip' }).then(res => {
+                    axios.post('/copy-to-public', { path: `public/files/list-zips/${dragon.zip}`, filename: dragon.zip, type: 'zip' }).then(res => {
                         // console.log(res.newPath);
                         closeBtn.click();
 
-                        axios.post("/extractfile",
+                        axios.post("/extract-file",
                         {
                             "filename": dragon.zip
                         }

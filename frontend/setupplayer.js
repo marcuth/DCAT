@@ -67,7 +67,7 @@ const getDataURIsAndSetupPlayer = (dragonName, res) => {
 }
 
 const reqDataUris = (dragonName, path) => {
-    axios.post('/datauri', { name: dragonName.replace(/"/g, '') }).then(res => {
+    axios.post('/data-uri', { name: dragonName.replace(/"/g, '') }).then(res => {
         getDataURIsAndSetupPlayer(dragonName, res);
     });
 }

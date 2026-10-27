@@ -23,7 +23,7 @@ FileInput.addEventListener('change', (e) => {
 
         clicked = true;
 
-        axios.post("/file",
+        axios.post("/upload-zip-file",
             {
                 "filename": filename,
                 "data": data
