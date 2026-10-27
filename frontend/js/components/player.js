@@ -67,7 +67,7 @@ const requestAnimationData = (dragonName) => {
 };
 
 const loadDragonAfterExtraction = (zipFilename, message) => {
-    alert(message);
+    showNotification(message);
 
     setTimeout(() => {
         removeDragonSelection();

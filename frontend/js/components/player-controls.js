@@ -46,7 +46,7 @@ const openViewportSettings = (player, applyAndRestartAnimation) => {
         };
 
         applyAndRestartAnimation();
-        alert('Successfully applied viewport changes');
+        showNotification('Successfully applied viewport changes');
         closeButton.click();
     });
 
@@ -68,7 +68,7 @@ const recordPlayerAnimation = (timeInMs) => {
         downloadLink.setAttribute('download', 'output');
         downloadLink.setAttribute('href', url);
         downloadLink.innerHTML = 'Download output video';
-        alert('Done recording your video, if you want to see/record more animations reload the page');
+        showNotification('Done recording your video, if you want to see/record more animations reload the page', 10000);
     });
 };
 

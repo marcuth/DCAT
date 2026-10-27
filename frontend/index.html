@@ -107,15 +107,8 @@
             <p class="Footer__credits">Made with ❤️ by <a href="https://feli.live/" target="_blank">Felipe Martínez</a> (a.k.a shark)</p>
         </footer>
     </body>
-    <script>
-        const alertMessageShown = sessionStorage.getItem('alertMessageShown');
-
-        if (!alertMessageShown) {
-            alert('If you\'re on mobile, please rotate your device to landscape mode for a proper experience');
-            sessionStorage.setItem('alertMessageShown', 'true');
-        }
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" type="text/javascript"></script>
+    <script src="./js/components/notification.js" type="text/javascript"></script>
     <script src="./js/state.js" type="text/javascript"></script>
     <script src="./js/services/api.js" type="text/javascript"></script>
     <script src="./js/utils/record-canvas.js" type="text/javascript"></script>
@@ -127,4 +120,5 @@
     <script src="./js/components/zip-search.js" type="text/javascript"></script>
     <script src="./js/components/help-modal.js" type="text/javascript"></script>
     <script src="./js/components/zip-upload.js" type="text/javascript"></script>
+    <script src="./js/components/orientation-notice.js" type="text/javascript"></script>
 </html>
