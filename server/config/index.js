@@ -4,6 +4,7 @@ module.exports = {
 	publicDir: 'public',
 	logFilePath: 'data/log.json',
 	filesDir: 'public/files',
+	temporaryDirs: ['zip', 'extracted', 'backgrounds'],
 	cleanupIntervalMs: 480000,
 	cleanupMaxAgeSeconds: 25,
 	pngMinAgeSeconds: 6

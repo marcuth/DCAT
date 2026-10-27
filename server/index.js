@@ -1,6 +1,9 @@
 const app = require('./app');
-const { port } = require('./config');
+const fs = require('fs');
+const { port, filesDir, temporaryDirs } = require('./config');
 const { startCleanupScheduler } = require('./services/cleanup-service');
+
+temporaryDirs.forEach(dir => fs.mkdirSync(`${filesDir}/${dir}`, { recursive: true }));
 
 startCleanupScheduler();
 
